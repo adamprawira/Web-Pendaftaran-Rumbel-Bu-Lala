@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rumah Belajar Bu Lala | Bimbingan Belajar Terpercaya</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigasi -->
+    <nav class="navbar">
+        <div class="logo">Rumah Belajar <span>Bu Lala</span></div>
+        <ul class="nav-links">
+            <li><a href="#beranda">Beranda</a></li>
+            <li><a href="#program">Program Kelas</a></li>
+            <li><a href="#pendaftaran" class="btn-nav">Daftar Sekarang</a></li>
+        </ul>
+    </nav>
+
+
+<!-- Bagian Utama (Hero) Dua Kolom -->
+    <header id="beranda" class="hero">
+        <div class="hero-text">
+            <h1>Belajar Menyenangkan, Prestasi Gemilang</h1>
+            <p>Bimbingan belajar interaktif dan terpercaya untuk jenjang TK, SD, SMP, dan SMA. Mari bergabung dan raih potensi terbaikmu bersama kami!</p>
+            <a href="#pendaftaran" class="btn-utama">Mulai Belajar</a>
+        </div>
+        
+        <!-- Kolom baru untuk gambar anak -->
+        <div class="hero-image">
+            <!-- Pastikan kamu memiliki gambar dengan nama ini di dalam folder -->
+            <img src="anak-belajar.jpeg" alt="Ilustrasi Anak Belajar di Rumah Belajar Bu Lala">
+        </div>
+    </header>
+
+    <!-- Bagian Program Kelas -->
+    <section id="program" class="program-section">
+        <h2>Program <span class="text-biru">Pilihan Kami</span></h2>
+        <div class="grid-program">
+            <div class="kartu-program">
+                <!-- Tambahan Karakter TK -->
+                <img src="seragam-tk.png.png" alt="Siswa TK" class="karakter-animasi">
+                <h3>Taman Kanak-Kanak (TK)</h3>
+                <p>Bermain sambil belajar membaca, menulis, dan berhitung dasar dengan metode yang menyenangkan dan ramah anak.</p>
+            </div>
+            
+            <div class="kartu-program">
+                <!-- Tambahan Karakter SD -->
+                <img src="seragam-sd.png.png" alt="Siswa SD" class="karakter-animasi">
+                <h3>Sekolah Dasar (SD)</h3>
+                <p>Pendampingan pelajaran sekolah untuk memperkuat fondasi akademik dan persiapan menghadapi ujian.</p>
+            </div>
+            
+            <div class="kartu-program">
+                <!-- Tambahan Karakter SMP -->
+                <img src="seragam-smp.png.png" alt="Siswa SMP" class="karakter-animasi">
+                <h3>Sekolah Menengah Pertama (SMP)</h3>
+                <p>Fokus pada pemahaman konsep mendalam untuk Matematika, IPA, Bahasa Inggris, dan mata pelajaran inti lainnya.</p>
+            </div>
+            
+            <div class="kartu-program">
+                <!-- Tambahan Karakter SMA -->
+                <img src="seragam-sma.png.png" alt="Siswa SMA" class="karakter-animasi">
+                <h3>Sekolah Menengah Atas (SMA)</h3>
+                <p>Persiapan intensif materi lanjutan dan pendampingan khusus untuk merencanakan masa depan pendidikan.</p>
+            </div>
+        </div>
+        </div>
+    </section>
+<!-- Bagian Testimoni -->
+    <section id="testimoni" class="testimoni-section">
+        <h2>Kata <span class="text-biru">Mereka</span></h2>
+        <div class="grid-testimoni">
+            <div class="kartu-testimoni">
+                <div class="bintang">⭐⭐⭐⭐⭐</div>
+                <p>"Sejak ikut bimbel di sini, nilai matematika anak saya naik drastis. Tutornya sabar dan cara belajarnya menyenangkan!"</p>
+                <h4>Bunda Budi (Wali Murid SD)</h4>
+            </div>
+            <div class="kartu-testimoni">
+                <div class="bintang">⭐⭐⭐⭐⭐</div>
+                <p>"Awalnya pusing banget sama IPA dan Fisika, tapi berkat trik dari tutor Bu Lala, sekarang jadi pelajaran favorit."</p>
+                <h4>Siti (Siswi SMP)</h4>
+            </div>
+            <div class="kartu-testimoni">
+                <div class="bintang">⭐⭐⭐⭐⭐</div>
+                <p>"Sangat terbantu untuk persiapan ujian masuk PTN. Suasana belajarnya seru dan tidak bikin tegang."</p>
+                <h4>Andi (Siswa SMA)</h4>
+            </div>
+        </div>
+    </section>
+    <!-- Bagian Pendaftaran -->
+    <section id="pendaftaran" class="daftar-section">
+        <h2>Formulir <span class="text-biru">Pendaftaran</span></h2>
+        <div class="form-container">
+            <!-- 1. Tambahan Spanduk Pemberitahuan -->
+            <div class="pengumuman-tutup">
+                <strong>⚠️ Pendaftaran Saat Ini Ditutup</strong><br>
+                Mohon maaf, kuota pendaftaran kelas baru sedang penuh. Silakan pantau terus website kami untuk informasi pembukaan gelombang berikutnya.
+            </div>
+
+            <form id="formDaftar">
+                <div class="grup-input">
+                    <label for="nama">Nama Lengkap Murid</label>
+                    <!-- 2. Tambahkan kata 'disabled' di akhir tag input -->
+                    <input type="text" id="nama" placeholder="Pendaftaran ditutup" disabled>
+                </div>
+                
+                <div class="grup-input">
+                    <label for="sekolah">Asal Sekolah</label>
+                    <input type="text" id="sekolah" placeholder="Pendaftaran ditutup" disabled>
+                </div>
+                
+                <div class="grup-input">
+                    <label for="kelas">Tingkat Kelas</label>
+                    <!-- Tambahkan 'disabled' pada select -->
+                    <select id="kelas" disabled>
+                        <option value="">-- Pendaftaran Ditutup --</option>
+                    </select>
+                </div>
+                
+                <div class="grup-input">
+                    <label for="nohp">Nomor HP / WhatsApp Wali Murid</label>
+                    <input type="tel" id="nohp" placeholder="Pendaftaran ditutup" disabled>
+                </div>
+                
+                <!-- 3. Tombol dikunci (disabled) dan event onclick dihapus sementara -->
+                <button type="button" class="btn-kirim" disabled>Pendaftaran Ditutup</button>
+            </form>
+        </div>
+    </section>
+    <!-- Bagian FAQ -->
+    <section id="faq" class="faq-section">
+        <h2>Pertanyaan yang Sering <span class="text-biru">Diajukan</span></h2>
+        <div class="faq-container">
+            <details class="faq-item">
+                <summary>Di mana lokasi Rumah Belajar Bu Lala?</summary>
+                <p>Rumah Belajar kami berlokasi di Sidoarjo, dekat dengan lingkungan sekolah. Anda bisa mendapatkan alamat lengkap dengan menghubungi kami via WhatsApp.</p>
+            </details>
+            <details class="faq-item">
+                <summary>Satu kelas terdiri dari berapa siswa?</summary>
+                <p>Untuk menjaga efektivitas belajar, kami membatasi jumlah siswa maksimal 5-8 orang per kelas (semi-privat).</p>
+            </details>
+            <details class="faq-item">
+                <summary>Bagaimana sistem pembayarannya?</summary>
+                <p>Pembayaran dilakukan setiap bulan (sistem SPP) melalui transfer bank atau langsung tunai di lokasi.</p>
+            </details>
+            <details class="faq-item">
+                <summary>Kapan pendaftaran gelombang baru dibuka?</summary>
+                <p>Saat ini kuota kami penuh. Anda dapat menghubungi admin untuk masuk ke daftar tunggu (waiting list) gelombang berikutnya.</p>
+            </details>
+        </div>
+    </section>
+    <!-- Tombol WhatsApp Mengambang -->
+    <!-- Ganti nomor 628... dengan nomor admin Rumah Belajar -->
+    <a href="https://wa.me/6289520537559?text=Halo%20Admin%20Rumah%20Belajar%20Bu%20Lala,%20saya%20ingin%20bertanya%20seputar%20bimbingan%20belajar..." class="wa-mengambang" target="_blank" rel="noopener noreferrer">
+        <!-- SVG Icon WhatsApp -->
+        <svg viewBox="0 0 32 32" width="32" height="32" fill="white">
+            <path d="M16 2a13 13 0 0 0-11 20l-2 5 5-2a13 13 0 1 0 8-23zm0 2a11 11 0 1 1-5 20l-3 1 1-3a11 11 0 0 1 7-18zm-4 5c-.4 0-.8 0-1.2.4C10.4 7.8 9 9 9 11c0 2 2 4.4 2.2 4.6.2.3 3.4 5.4 8.2 7.4 3 1.2 4 1 5 .6.8-.2 2.6-1 3-2 .4-1 .4-2 .3-2s-.6-.3-1.2-.6c-.7-.3-3.7-1.8-4.2-2-.6-.2-1-.3-1.4.3-.4.6-1.6 2-2 2.4-.4.4-.8.5-1.5.2-.7-.3-2.6-1-3.6-2.2-1.3-1.4-1.4-1.6-1.7-2-.3-.5.2-.4.6-.9.4-.5.5-.8.7-1.3.3-.6.1-1-.1-1.3-.2-.5-1.3-3.4-1.8-4.6-.4-1.2-.9-1-1.3-1z"/>
+        </svg>
+    </a>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Rumah Belajar Bu Lala. Didesain oleh Adam Prawira.</p>
+    </footer>
+
+    <!-- Logika JavaScript untuk mengirim data ke WhatsApp -->
+    <script>
+        function kirimKeWhatsApp() {
+            // 1. Mengambil data yang diketik oleh pengguna
+            const nama = document.getElementById('nama').value;
+            const sekolah = document.getElementById('sekolah').value;
+            const kelas = document.getElementById('kelas').value;
+            const nohp = document.getElementById('nohp').value;
+
+            // 2. Memastikan tidak ada kolom yang kosong
+            if(nama === "" || sekolah === "" || kelas === "" || nohp === "") {
+                alert("Mohon lengkapi semua data pendaftaran terlebih dahulu!");
+                return; // Menghentikan proses jika ada yang kosong
+            }
+
+            // 3. TENTUKAN NOMOR TUJUAN (Ganti dengan nomor WA Bu Lala/Admin)
+            // Penting: Gunakan format 62 sebagai pengganti angka 0 di depan
+            const nomorAdmin = "6281234567890"; 
+
+            // 4. Menyusun pesan yang akan dikirim ( %0A adalah kode spasi/Enter (baris baru) di URL )
+            const pesan = `Halo Rumah Belajar Bu Lala! Saya ingin mendaftar dengan data berikut:%0A%0A*Nama Lengkap:* ${nama}%0A*Asal Sekolah:* ${sekolah}%0A*Kelas:* ${kelas}%0A*Nomor HP Wali:* ${nohp}%0A%0AMohon informasi lebih lanjut mengenai proses pendaftarannya. Terima kasih!`;
+
+            // 5. Membuat tautan otomatis ke WhatsApp API
+            const linkWA = `https://wa.me/${+6289520537559}?text=${pesan}`;
+
+            // 6. Membuka tab baru yang langsung menuju ke WhatsApp
+            window.open(linkWA, '_blank');
+        }
+    </script>
+</body>
+</html>

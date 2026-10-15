@@ -1,0 +1,623 @@
+/* Mengatur skema warna profesional */
+:root {
+    --biru-utama: #2563eb;    /* Biru profesional dan tegas */
+    --biru-muda: #eff6ff;     /* Latar belakang biru yang sangat pudar */
+    --putih: #ffffff;
+    --teks-gelap: #1e293b;    /* Abu-abu kehitaman agar nyaman dibaca */
+    --teks-abu: #64748b;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--putih);
+    color: var(--teks-gelap);
+    line-height: 1.6;
+}
+
+.text-biru {
+    color: var(--biru-utama);
+}
+
+/* --- NAVIGASI --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5vw;
+    background-color: var(--putih);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: var(--biru-utama);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--teks-gelap);
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--biru-utama);
+}
+/* --- TOMBOL MULAI BELAJAR (CTA UTAMA) --- */
+.btn-utama {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #2563eb, #3b82f6); /* Gradasi biru tegas ke biru muda */
+    color: var(--putih);
+    padding: 16px 40px;
+    text-decoration: none; /* Menghilangkan garis bawah default */
+    border-radius: 50px;   /* Membuat bentuk tombol menjadi melengkung seperti pil */
+    font-size: 1.15rem;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    
+    /* Efek bayangan ganda: satu tegas di bawah, satu menyebar sebagai cahaya */
+    box-shadow: 0 4px 6px rgba(37, 99, 235, 0.2), 
+                0 0 15px rgba(37, 99, 235, 0.4);
+                
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Transisi dengan efek membal (bouncy) */
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efek saat kursor menyorot tombol (Hover) */
+.btn-utama:hover {
+    transform: translateY(-4px) scale(1.02); /* Tombol terangkat dan sedikit membesar */
+    box-shadow: 0 8px 15px rgba(37, 99, 235, 0.3), 
+                0 0 25px rgba(37, 99, 235, 0.6); /* Cahaya bertambah terang */
+    background: linear-gradient(135deg, #1d4ed8, #2563eb); /* Warna gradasi menggelap sedikit */
+}
+
+/* Efek saat tombol diklik (Active) */
+.btn-utama:active {
+    transform: translateY(2px) scale(0.98); /* Tombol seolah-olah tertekan ke dalam */
+    box-shadow: 0 2px 4px rgba(37, 99, 235, 0.2);
+}
+
+/* (Opsional) Menambahkan kilapan cahaya putih yang melintas di atas tombol secara berkala */
+.btn-utama::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 100%);
+    transform: skewX(-25deg);
+    animation: kilapanCahaya 5s infinite;
+}
+
+@keyframes kilapanCahaya {
+    0% { left: -100%; }
+    20% { left: 200%; }
+    100% { left: 200%; }
+}
+
+.btn-nav {
+    background-color: var(--biru-utama);
+    color: var(--putih) !important;
+    padding: 10px 20px;
+    border-radius: 6px;
+}
+
+/* --- HERO SECTION --- */
+/* --- HERO SECTION --- */
+.hero {
+    background-color: var(--biru-muda);
+    padding: 80px 5vw;
+    display: flex;               /* Membuat elemen di dalamnya berjejer menyamping */
+    align-items: center;         /* Menyejajarkan teks dan gambar di tengah secara vertikal */
+    justify-content: space-between;
+    gap: 40px;                   /* Memberi jarak antara teks dan gambar */
+}
+
+.hero-text {
+    flex: 1;                     /* Meminta teks mengambil ruang yang tersedia */
+    text-align: left;            /* Teks rata kiri terlihat lebih rapi saat ada gambar di kanannya */
+}
+
+.hero-text h1 {
+    font-size: 3.5rem;
+    color: var(--biru-utama);
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.hero-text p {
+    font-size: 1.2rem;
+    color: var(--teks-abu);
+    margin-bottom: 30px;
+}
+
+.hero-image {
+    flex: 1;                     /* Meminta gambar mengambil sisa ruang dengan adil */
+    display: flex;
+    justify-content: center;
+}
+
+/* Mengatur ukuran maksimal gambar agar tidak menutupi layar */
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    animation: melayangSantai 3s ease-in-out infinite; /* Memberi efek visual melayang pelan */
+}
+
+/* Animasi melayang untuk gambar anak */
+@keyframes melayangSantai {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+
+/* --- PROGRAM KELAS --- */
+.program-section {
+    padding: 80px 5vw;
+    text-align: center;
+}
+
+.program-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+}
+
+.grid-program {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.kartu-program {
+    background: var(--putih);
+    border: 1px solid #e2e8f0;
+    border-top: 5px solid var(--biru-utama);
+    padding: 30px;
+    border-radius: 12px;
+    width: 280px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+/* --- GAYA KARAKTER JENJANG SEKOLAH --- */
+
+.kartu-program {
+    /* ... (kode sebelumnya biarkan saja) ... */
+    
+    /* Tambahan agar isi kartu diletakkan rapi di tengah */
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+.karakter-animasi {
+    height: 120px; /* Mengatur tinggi karakter agar seragam dan tidak terlalu besar */
+    width: auto;
+    margin-bottom: 20px;
+    
+    /* Menentukan bahwa poros putaran ada di bagian paling bawah (kaki karakter) */
+    transform-origin: bottom center; 
+    
+    /* Menjalankan animasi bergoyang selama 3 detik tanpa henti */
+    animation: sapaanCeria 3s ease-in-out infinite;
+}
+
+/* Kunci Animasi Goyang (Swaying/Waving) */
+/* --- GAYA KARAKTER JENJANG SEKOLAH (REVISI) --- */
+
+.karakter-animasi {
+    height: 120px;
+    width: auto;
+    margin-bottom: 20px;
+    
+    /* Mengubah titik tumpu ke bawah tengah (kaki) */
+    transform-origin: bottom center; 
+    
+    /* Animasi standar: Bernapas dengan tenang */
+    animation: bernapasAlami 4s ease-in-out infinite;
+}
+
+/* Saat KARTU disorot mouse, KARAKTER di dalamnya akan melompat */
+.kartu-program:hover .karakter-animasi {
+    /* Menghentikan napas dan memicu animasi melompat 1 kali saja selama 0.6 detik */
+    animation: lompatKegelikan 0.6s ease-out forwards;
+}
+
+/* 1. Animasi Bernapas (Naik turun dan sedikit membesar) */
+@keyframes bernapasAlami {
+    0%, 100% { 
+        transform: translateY(0) scale(1); 
+    }
+    50% { 
+        transform: translateY(-6px) scale(1.02); /* Terangkat sedikit dan dadanya sedikit membesar */
+    }
+}
+
+/* 2. Animasi Melompat Kegirangan (Prinsip Squash & Stretch) */
+@keyframes lompatKegelikan {
+    0% { 
+        transform: scale(1, 1) translateY(0); 
+    }
+    20% { 
+        transform: scale(1.15, 0.85) translateY(5px); /* Squash: Mengkerut ke bawah untuk ancang-ancang melompat */
+    }
+    50% { 
+        transform: scale(0.9, 1.1) translateY(-25px); /* Stretch: Melompat tinggi ke atas (meregang) */
+    }
+    75% { 
+        transform: scale(1.05, 0.95) translateY(0); /* Squash: Jatuh mendarat dan sedikit tertekan */
+    }
+    100% { 
+        transform: scale(1, 1) translateY(0); /* Kembali ke ukuran dan posisi normal */
+    }
+}
+
+.kartu-program:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.kartu-program h3 {
+    color: var(--biru-utama);
+    margin-bottom: 15px;
+}
+
+/* --- PENDAFTARAN --- */
+.daftar-section {
+    background-color: var(--biru-muda);
+    padding: 80px 5vw;
+    text-align: center;
+}
+
+.daftar-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+.form-container {
+    background: var(--putih);
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    text-align: left; /* Teks dalam form rata kiri */
+}
+
+.grup-input {
+    margin-bottom: 20px;
+}
+
+.grup-input label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: var(--teks-gelap);
+}
+
+.grup-input input, .grup-input select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.grup-input input:focus, .grup-input select:focus {
+    border-color: var(--biru-utama);
+    /* Memberi efek glow biru muda saat kolom sedang diketik */
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2); 
+}
+
+/* Mengatur warna tombol WA menjadi Hijau */
+.btn-kirim {
+    width: 100%;
+    background-color: #25D366; 
+    color: var(--putih);
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+.btn-kirim:hover {
+    background-color: #1ebc56;
+}
+
+/* --- FOOTER --- */
+footer {
+    background-color: var(--teks-gelap);
+    color: var(--putih);
+    text-align: center;
+    padding: 20px;
+}
+/* ========================================= */
+/* --- MODE PENDAFTARAN DITUTUP ---          */
+/* ========================================= */
+
+/* Desain kotak spanduk pengumuman (Merah muda peringatan) */
+.pengumuman-tutup {
+    background-color: #fee2e2; /* Merah muda pudar */
+    color: #b91c1c;            /* Teks merah gelap agar kontras */
+    padding: 15px 20px;
+    border-radius: 8px;
+    border-left: 5px solid #ef4444; /* Garis tegas di sebelah kiri */
+    margin-bottom: 25px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* Mengubah warna latar input yang dikunci (disabled) menjadi abu-abu mati */
+.grup-input input:disabled, 
+.grup-input select:disabled {
+    background-color: #f1f5f9;
+    color: #94a3b8;
+    border-color: #e2e8f0;
+    cursor: not-allowed; /* Mengubah kursor mouse menjadi tanda dilarang */
+}
+
+/* Mengubah tombol hijau WA menjadi tombol abu-abu yang tidak merespon */
+.btn-kirim:disabled {
+    background-color: #cbd5e1;
+    color: #64748b;
+    cursor: not-allowed;
+}
+
+/* Mematikan efek hover (berubah warna) pada tombol yang dikunci */
+.btn-kirim:disabled:hover {
+    background-color: #cbd5e1;
+}
+/* --- RESPONSIVE DESIGN (HP & TABLET) --- */
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 20px;
+        gap: 20px;
+    }
+    
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+    
+    .hero-text h1 {
+        font-size: 2.2rem;
+    }
+    
+    .form-container {
+        padding: 25px;
+    }
+}
+/* ========================================= */
+/* --- BACKGROUND PATTERN MATEMATIKA & IPA --- */
+/* ========================================= */
+
+/* 1. Mencegah animasi keluar batas dan melindungi elemen di dalamnya */
+/* 1. Mencegah animasi keluar batas dan melindungi elemen di dalamnya */
+/* ========================================= */
+/* --- BACKGROUND PATTERN MATEMATIKA & IPA --- */
+/* ========================================= */
+
+.hero, .daftar-section {
+    position: relative;
+    overflow: hidden;
+    z-index: 1; 
+    /* Hilangkan background linear-gradient dari sini */
+}
+
+/* Pastikan konten di atas tetap bisa di-klik */
+.hero-text, .hero-image, .daftar-section h2, .form-container {
+    position: relative;
+    z-index: 2;
+}
+
+/* 
+   LAPISAN 1 (Paling Bawah): Animasi Pola SVG yang bergerak.
+   Kita pisahkan elemen ini agar animasinya bisa berjalan bebas.
+*/
+.hero::before, .daftar-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2; /* Taruh paling belakang */
+    pointer-events: none; 
+    
+    background-image: url("data:image/svg+xml,%3Csvg width='300' height='300' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%232563eb' fill-opacity='0.08' font-size='30' font-family='sans-serif' font-weight='bold'%3E%3Ctext x='30' y='50'%3E%CF%80%3C/text%3E%3Ctext x='180' y='70'%3EE=mc%C2%B2%3C/text%3E%3Ctext x='80' y='140'%3E%E2%88%9A%3C/text%3E%3Ctext x='220' y='190'%3E%E2%88%91%3C/text%3E%3Ctext x='50' y='250'%3EH%E2%82%82O%3C/text%3E%3Ctext x='130' y='40'%3E%25%3C/text%3E%3Ctext x='140' y='230'%3E%CE%B8%3C/text%3E%3Ccircle cx='120' cy='120' r='20' fill='none' stroke='%232563eb' stroke-opacity='0.08' stroke-width='4'/%3E%3Cpolygon points='230,110 260,150 200,150' fill='none' stroke='%232563eb' stroke-opacity='0.08' stroke-width='4'/%3E%3C/g%3E%3C/svg%3E");
+    background-size: 300px 300px;
+    animation: polaBerjalan 20s linear infinite;
+}
+
+/* 
+   LAPISAN 2 (Tengah): Efek Fade In/Out menggunakan linear-gradient transparan.
+   Kita gunakan elemen ::after untuk membuat bingkai gradasi yang menutupi bagian atas dan bawah pola.
+*/
+.hero::after, .daftar-section::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Berada di atas pola SVG, tapi di bawah konten teks/gambar */
+    pointer-events: none;
+    
+    /* Gradasi dari Putih solid (atas) -> Transparan (tengah) -> Putih solid (bawah) */
+    background: linear-gradient(
+        to bottom, 
+        var(--putih) 0%, 
+        rgba(255, 255, 255, 0) 15%, 
+        rgba(255, 255, 255, 0) 85%, 
+        var(--putih) 100%
+    );
+}
+
+@keyframes polaBerjalan {
+    0% { background-position: 0 0; }
+    100% { background-position: -300px -300px; }
+}
+/* --- TOMBOL WHATSAPP MENGAMBANG --- */
+.wa-mengambang {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25D366; /* Warna khas WhatsApp */
+    color: white;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+    z-index: 1000; /* Pastikan selalu berada di atas elemen lain */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: wa-napas 2s infinite; /* Efek berdenyut memanggil perhatian */
+}
+
+.wa-mengambang:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+    animation-play-state: paused; /* Berhenti berdenyut saat disorot */
+}
+
+@keyframes wa-napas {
+    0% { transform: scale(1); box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4); }
+    50% { transform: scale(1.05); box-shadow: 0 4px 25px rgba(37, 211, 102, 0.6); }
+    100% { transform: scale(1); box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4); }
+}
+
+@media screen and (max-width: 768px) {
+    .wa-mengambang { bottom: 20px; right: 20px; width: 50px; height: 50px; }
+    .wa-mengambang svg { width: 24px; height: 24px; }
+}
+/* --- TESTIMONI --- */
+.testimoni-section {
+    padding: 80px 5vw;
+    text-align: center;
+    background-color: var(--putih);
+}
+
+.testimoni-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+}
+
+.grid-testimoni {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.kartu-testimoni {
+    background: var(--biru-muda);
+    padding: 30px;
+    border-radius: 12px;
+    width: 300px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    text-align: left;
+    border-top: 4px solid var(--biru-utama);
+}
+
+.bintang { margin-bottom: 15px; font-size: 1.2rem; }
+.kartu-testimoni p { font-style: italic; color: var(--teks-abu); margin-bottom: 20px; }
+.kartu-testimoni h4 { color: var(--teks-gelap); font-size: 1rem; }
+/* --- FAQ --- */
+.faq-section {
+    padding: 80px 5vw;
+    text-align: center;
+    background-color: var(--putih); /* Atau gunakan var(--biru-muda) jika ingin variasi */
+}
+
+.faq-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.faq-item {
+    background: var(--biru-muda);
+    margin-bottom: 15px;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.faq-item summary {
+    padding: 20px;
+    font-weight: bold;
+    color: var(--biru-utama);
+    cursor: pointer;
+    list-style: none; /* Menghilangkan tanda panah default di beberapa browser */
+    position: relative;
+}
+
+/* Mengubah kursor saat disorot */
+.faq-item summary:hover { background-color: #e0f2fe; }
+
+/* Menambahkan tanda + di sebelah kanan (Custom panah) */
+.faq-item summary::after {
+    content: '+';
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    color: var(--biru-utama);
+    transition: transform 0.3s;
+}
+
+/* Mengubah + menjadi - saat terbuka */
+.faq-item[open] summary::after { content: '−'; }
+
+/* Animasi untuk teks jawaban */
+.faq-item p {
+    padding: 0 20px 20px 20px;
+    color: var(--teks-abu);
+    animation: fadeInDown 0.3s ease-out;
+}
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
